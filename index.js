@@ -312,8 +312,8 @@ was returned.
 */
 function annoyingSong(numBottles){
       let bottles = numBottles;
-      str = `${bottles} bottles of soda on the wall, ${numBottles} bottles of soda, take one down pass it around ${numBottles} bottles of soda on the wall`;
-      return console.log(str);
+      var singsong = `${bottles} bottles of soda on the wall, ${numBottles} bottles of soda, take one down pass it around ${numBottles} bottles of soda on the wall`;
+      return console.log(singsong);
 }
 
 var bottlesOfPop = 99;
@@ -366,7 +366,7 @@ HINT - you may need to study tomorrow's content on arrays
 HINT - try looking up the .includes() method
 */
 
-str = "May all beings be happy. May all beings be happy. May all beings be happy. May all beings be happy. May all beings be happy. May all beings be happy."
+var str = "May all beings be happy. May all beings be happy. May all beings be happy. May all beings be happy. May all beings be happy. May all beings be happy."
 
 function vowelCounter(string) {
   var str = string.split('');
