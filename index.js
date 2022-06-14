@@ -327,8 +327,9 @@ was returned.
 */
 function annoyingSong(numBottles){
       let bottles = numBottles;
-      var singsong = `${bottles} bottles of soda on the wall, ${numBottles} bottles of soda, take one down pass it around ${numBottles} bottles of soda on the wall`;
-      return console.log(singsong);
+      var singsong = `${bottles} bottles of soda on the wall, ${numBottles} bottles of soda, take one down pass it around ${numBottles - 1} bottles of soda on the wall`;
+      console.log(`${bottles} bottles of soda on the wall, ${numBottles} bottles of soda, take one down pass it around ${numBottles - 1} bottles of soda on the wall`);
+      return singsong;
 }
 
 var bottlesOfPop = 99;
