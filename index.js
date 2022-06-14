@@ -231,8 +231,6 @@ var compNum = Math.round(Math.random() * 3);
 
 
 function game(user, computer){
-  let turnout;
-  let player = user;
 
   if (compNum === 3){
     var comp = "rock";
@@ -242,26 +240,27 @@ function game(user, computer){
     comp = "scissors";
   }
 
-  if (comp === player) {
+  if (comp === user) {
     console.log("it's a tie!");
     return "it's a tie";
-  } else if (comp === "paper" && player === "scissors") {
+  }
+
+  else if (comp === "paper" && user === "scissors") {
     console.log("you win!");
     return "you win!";
-  } else if (comp === "scissors" && player === "paper") {
+  } else if (comp === "scissors" && user === "paper") {
     console.log("You Lose!");
     return "you lose!";
-  } else if (comp === "rock" && player === "paper") {
+  } else if (comp === "rock" && user === "paper") {
     console.log("You Win!");
     return "you win!";
-  } else if (comp === "paper" && player === "rock") {
+  } else if (comp === "paper" && user === "rock") {
     console.log("You Lose!");
     return "you lose!";
-  } else if (comp === "rock" && player === "scissors") {
+  } else if (comp === "rock" && user === "scissors") {
     console.log("you lose!");
     return "you lose!";
-  } else if (comp === "scissors" && player === "rock") {
-    console.log("you win!");
+  } else {
     return "you win!";
   }
   return turnout;
