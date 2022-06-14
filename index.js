@@ -136,10 +136,14 @@ Puppies less than 1 year
    4 - 7 months 5% of their body weight
    7 - 12 months 4% of their body weight
 
-NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-NOTE 2: This is a great time to check the tests to see what it expects, versus what is actually
-        returned from your function. This is an example of the output to look for on each test point.
-          ● hungryDogFunction › Dog is 1 year and is 5lbs or less
+NOTE: If done correctly, a weight of 15 lbs and age of
+1 year would return 0.44999999999999996
+NOTE 2: This is a great time to check the tests to see
+what it expects, versus what is actually
+        returned from your function. This is an example of
+        the output to look for on each test point.
+          ● hungryDogFunction › Dog is 1 year and is 5lbs
+          or less
 
             expect(received).toBe(expected) // Object.is equality
 
@@ -153,8 +157,12 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
           ^
               24 |   })
 
-        Notice the expected and received, expected is what the test is looking for, and received is what was actually returned from this function. You can also see it's passing in two values, the number 4 and the number 1.
-        So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
+        Notice the expected and received, expected is what the test is looking
+        for, and received is what was actually returned from this function. You
+        can also see it's passing in two values, the number 4 and the number 1.
+        So, on this one test, the weight would be 4 pounds, and the age would be
+         1 years old. It's expecting your function to return a decimal number of
+         0.2
 */
 
 function hungryDog(weight, age){
@@ -196,61 +204,70 @@ hungryDog(15, 10)
 // Rock, Paper, Scissors - Let's play against the computer!
 /*
 Do the following:
-1. Create a new variable that randomly generates the computer's choice, this must not be done inside the function
-2. Use Math.random to determine the computer's choice (Math.random gives a random number between 0 and 1)
-3. Make a conditional that changes the variable to "rock", "paper", or "scissors" based on it's random number
+1. Create a new variable that randomly generates the computer's choice,
+this must not be done inside the function
+2. Use Math.random to determine the computer's choice (Math.random gives a
+random number between 0 and 1)
+3. Make a conditional that changes the variable to "rock", "paper", or
+"scissors" based on it's random number
 
 Use the game function below to do the following:
-1. Receive 2 parameters: a string with the user's choice of "rock", "paper", or "scissors"
+1. Receive 2 parameters: a string with the user's choice of "rock", "paper",
+or "scissors"
    and the computer's choice of "rock", "paper", or "scissors".
    Note: make sure the strings are all lower case or it will not pass the test
-2. Return whether the user won, lost, or tied based on these rules of the game described below - the strings returned need to match these strings below exactly.
+2. Return whether the user won, lost, or tied based on these rules of the game
+described below - the strings returned need to match these strings below exactly.
  - win should return "you win!"
  - lose should return "you lose!"
  - tie should return "it's a tie"
 
-RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
+RULES OF THE GAME: Scissors beats Paper | Paper beats Rock |
+Rock beats Scissors | Or there's a tie
 */
 
 var compNum = Math.round(Math.random() * 3);
 
+
+
 function game(user, computer){
-  let comp = 0;
-  var turnout = "";
+  let turnout;
   let player = user.toLowerCase();
-  if (computer === 3){
-    comp = "rock";
-  } else if (computer === 2){
+
+  if (compNum === 3){
+    var comp = "rock";
+  } else if (compNum === 2){
     comp = "paper";
   } else {
     comp = "scissors";
-}
+  }
+
   if (comp === player) {
-    console.log
-    turnout = "It's a tie!";
+    console.log("it's a tie!");
+    return "it's a tie";
   } else if (comp === "paper" && player === "scissors") {
-    console.log("You Win!");
-    turnout = "You Win!";
-  } else if (comp == "scissors" && player == "paper") {
+    console.log("you win!");
+    return "you win!";
+  } else if (comp === "scissors" && player === "paper") {
     console.log("You Lose!");
-    turnout = "You Lose!";
+    return "you lose!";
   } else if (comp === "rock" && player === "paper") {
     console.log("You Win!");
-    turnout = "You Win!";
+    return "you win!";
   } else if (comp === "paper" && player === "rock") {
     console.log("You Lose!");
-    turnout = "You Lose!"
+    return "you lose!";
   } else if (comp === "rock" && player === "scissors") {
-    console.log("You Lose!");
-    turnout = "You Lose!"
+    console.log("you lose!");
+    return "you lose!";
   } else if (comp === "scissors" && player === "rock") {
-    console.log("You Win!");
-    turnout = "You Win!";
+    console.log("you win!");
+    return "you win!";
   }
   return turnout;
 }
 
-game("rock", compNum);
+game("scissors", compNum);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -264,10 +281,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(milage){
-  var metricConversion = milage * 1.60934;
-  console.log(metricConversion);
-  return metricConversion;
+function miles(km){
+  return km * 0.621371;
 }
 
 miles(21);
@@ -280,13 +295,13 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(footage){
-  var cmConversion = footage * 2.54;
-  console.log(cmConversion);
-  return cmConversion;
+function feet(cm){
+  return cm / 30.48;
 }
 
-feet(12);
+
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -318,8 +333,8 @@ function annoyingSong(numBottles){
 
 var bottlesOfPop = 99;
 for (let i = 0; i < bottlesOfPop; bottlesOfPop -= 1) {
-  annoyingSong(bottlesOfPop);
-}
+   annoyingSong(bottlesOfPop);
+ }
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -337,21 +352,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(grade){
-  if (grade >= 90) {
-    return "You got an A";
-  } else if (grade <= 89) {
-    return "You got a B";
-  } else if (grade <= 79) {
-    return "You got a C";
-  } else if (grade <= 69) {
-    return "You got a D";
-  } else {
-    return "You got an F";
+function grade(num){
+  if (num >= 90) {
+    return "you got an A";
+  } else if (num <= 89) {
+    return "you got a B";
+  } else if (num <= 79) {
+    return "you got a C";
+  } else if (num <= 69) {
+    return "you got a D";
+  } else if (num < 60) {
+    return "you got an F";
   }
 }
 
-grade(98);
+grade(89);
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -382,7 +397,6 @@ function vowelCounter(string) {
 }
 
 vowelCounter(str);
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
