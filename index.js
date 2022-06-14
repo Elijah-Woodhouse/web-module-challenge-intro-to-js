@@ -232,7 +232,7 @@ var compNum = Math.round(Math.random() * 3);
 
 function game(user, computer){
   let turnout;
-  let player = user.toLowerCase();
+  let player = user;
 
   if (compNum === 3){
     var comp = "rock";
@@ -267,7 +267,7 @@ function game(user, computer){
   return turnout;
 }
 
-game("scissors", compNum);
+game("paper", compNum);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -352,21 +352,23 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(num){
-  if (num >= 90) {
-    return "you got an A";
-  } else if (num <= 89) {
-    return "you got a B";
-  } else if (num <= 79) {
-    return "you got a C";
-  } else if (num <= 69) {
-    return "you got a D";
-  } else if (num < 60) {
-    return "you got an F";
-  }
-}
 
-grade(89);
+function grade(numberGrade) {
+  let letter;
+  if (numberGrade >= 90) {
+    letter = 'you got an A';
+  } else if (numberGrade >= 80) {
+    letter = 'you got a B';
+    return letter;
+  } else if (numberGrade >= 70) {
+    letter = 'you got a C';
+  } else if (numberGrade >= 60) {
+    letter = 'you got a D';
+  } else {
+    letter = 'you got an F';
+  }
+  return letter;
+};
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
